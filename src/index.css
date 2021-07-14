@@ -1,13 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Markerdisplay=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500family=Mulish:wght@300display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 0px !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.floatingLogo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
