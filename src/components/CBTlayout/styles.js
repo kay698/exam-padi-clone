@@ -57,5 +57,18 @@ export const CbtLayoutStyles = styled.div`
         }
       }
     }
+
+    .ant-btn{
+      margin-left: 12px;
+      border: none;
+      border-radius: 5px;
+
+    }
+
+.ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+    background: #FDE9D2;
+    color: #5B64B1;
+}
   }
+
 `;
