@@ -16,3 +16,12 @@ export const CbtNavListItems = [
     to: "/cbt-sat",
   },
 ];
+
+export const Buttons = [
+  {
+    but: "Practise mode"
+  },
+  {
+    but: "Test mode"
+  }
+]
