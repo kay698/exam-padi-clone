@@ -27,11 +27,13 @@ import EditProfile from "./routes/Dashboard/Profile/SubPages/editProfile";
 import ChangePassword from "./routes/Dashboard/Profile/SubPages/changePassword";
 import Receipts from "./routes/Dashboard/Profile/SubPages/receipts";
 import { SubjectProvider } from "./context/SubjectContext";
+import { ModeProvider } from "./context/Mode";
 import "antd/dist/antd.css";
 
 function App() {
   return (
     <SubjectProvider>
+      <ModeProvider>
       <div>
         <BrowserRouter>
           <Switch>
@@ -70,6 +72,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
+      </ModeProvider>
     </SubjectProvider>
   );
 }

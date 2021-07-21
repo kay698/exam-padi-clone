@@ -17,11 +17,11 @@ export const CbtNavListItems = [
   },
 ];
 
-export const Buttons = [
-  {
-    but: "Practise mode"
-  },
-  {
-    but: "Test mode"
-  }
-]
+// export const Buttons = [
+//   {
+//     but: "Practise mode"
+//   },
+//   {
+//     but: "Test mode"
+//   }
+// ]
