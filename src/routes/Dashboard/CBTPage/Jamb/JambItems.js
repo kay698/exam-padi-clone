@@ -69,8 +69,8 @@ const JambItems = () => {
 
           <select className="selectcss"
             value={selectedYear}
-            onChange={filterYear}
-            // onChange={(e) => filterYear(e.target.value)}
+            // onChange={filterYear}
+            onChange={(e) => filterYear(e.target.value)}
           >
             {/* <option value="default" disabled>
             Select Year
