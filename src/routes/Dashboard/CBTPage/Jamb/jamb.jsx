@@ -7,12 +7,11 @@ import JambItems from "./JambItems";
 
 
 const JAMB = () => {
-  const { Title } = Typography;
+  // const { Title } = Typography;
   return (
     <CbtLayout>
       <CbtPageStyles>
         <FlexibleDiv justifyContent="flex-start" className="cbtPage__sub">
-          {/* <Title level={5}>JAMB</Title> */}
           <CbtWaecCom>
             <JambItems />
           </CbtWaecCom>

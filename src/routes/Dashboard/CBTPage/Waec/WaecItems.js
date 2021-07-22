@@ -1,10 +1,9 @@
 // import "./styles.css";
 import { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
-import { Button } from "antd";
 import { CbtWaec } from "./styles";
+import QandA from "../Jamb/QandA";
 
-// console.log(WaecJambData.map((item) => item.subject));
 const WaecItems = () => {
   const subjects = [...new Set(WaecJambData.map((item) => item.subject))];
   const [selectedSubject, setSelectedSubject] = useState(WaecJambData.subject);
@@ -27,7 +26,7 @@ const WaecItems = () => {
     const filteredSubjectResults = WaecJambData.filter(
       (el) => subject === el.subject
     );
-    setData(filteredSubjectResults[0]); // since it is only one object in the array we send the object instead
+    setData(filteredSubjectResults[0]); 
   };
   useEffect(() => {
     setSelectedYear(WaecJambData.examYear);
@@ -45,9 +44,9 @@ const WaecItems = () => {
     setData(filteredSubjectResults[0]);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <div>
@@ -87,15 +86,7 @@ const WaecItems = () => {
         <div>
           {data &&
             data.data.map((el, index) => (
-              <div key={index}>
-                <p>{el.question}</p>
-                {el.answers.map((answer) => (
-                  <Button 
-                  style={{display: 'block', margin:'12px', borderRadius:'7px', backgroundColor: answer.answer === selectedAnswer.answer ? "#979797": '#F2F2F2', color: answer.answer === selectedAnswer.answer ? '#F2F2F2' : "#979797" }}
-                   onSubmit={handleSubmit}>{answer?.answer}</Button>
-                ))}
-                {/* <button>{el.answers}</button> */}
-              </div>
+              <QandA key={index} item={el} />
             ))}
         </div>
       </div>

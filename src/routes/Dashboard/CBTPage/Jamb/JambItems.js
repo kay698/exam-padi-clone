@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "../Waec/styles";
-import { Button } from "antd";
 import QandA from "./QandA";
-import { Pagination } from 'antd';
 
 
 const JambItems = () => {
@@ -45,9 +43,9 @@ const JambItems = () => {
         setData(filteredSubjectResults[0]);
       };
     
-      const handleSubmit = (e) => {
-        e.preventDefault();
-      };
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //   };
 
   return (
     <div>
@@ -89,20 +87,8 @@ const JambItems = () => {
           {data &&
             data.data.map((el, index) => (
                 <QandA key={index} item={el} />
-            //   <div key={index}>
-            //     <p>{el.question}</p>
-            //     {el.answers.map((answer) => (
-            //       <Button 
-            //     style={{display: 'block', margin:'12px', borderRadius:'7px', backgroundColor: answer.answer === selectedAnswer.answer ? "#979797": '#F2F2F2', color: answer.answer === selectedAnswer.answer ? '#F2F2F2' : "#979797" }}
-            //        onSubmit={handleSubmit}>{answer?.answer}</Button>
-            //     ))}
-            //     {/* <button>{el.answers}</button> */}
-            //   </div>
             ))}
         </div>
-        {/* <div style={{marginTop:'12px', display:"flex", justifyContent:'flex-end' }}>
-            <Pagination defaultCurrent={1} total={50} />
-        </div> */}
       </div>
      </div>
     </div>

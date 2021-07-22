@@ -27,13 +27,14 @@ import EditProfile from "./routes/Dashboard/Profile/SubPages/editProfile";
 import ChangePassword from "./routes/Dashboard/Profile/SubPages/changePassword";
 import Receipts from "./routes/Dashboard/Profile/SubPages/receipts";
 import { SubjectProvider } from "./context/SubjectContext";
+import { ModeProvider } from "./context/Mode";
 import "antd/dist/antd.css";
-import { CbtWJContext } from "./context/contextWJ";
+// import { CbtWJContext } from "./context/contextWJ";
 
 function App() {
   return (
     <SubjectProvider>
-      <CbtWJContext>
+      <ModeProvider>
       <div>
         <BrowserRouter>
           <Switch>
@@ -71,8 +72,8 @@ function App() {
             <Route path="/" component={Home} />
           </Switch>
         </BrowserRouter>
-      </div>
-      </CbtWJContext>
+      </div>      
+      </ModeProvider>
     </SubjectProvider>
   );
 }

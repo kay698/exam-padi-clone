@@ -9,18 +9,18 @@ export const CbtWaec = styled.div`
   background: #ffffff;
   min-height: 61px;
   border-radius: 15px;
-  .subject {
-    color: #979797;
-    margin: 5px 15px;
-    // font-family: Montserrat;
-    // font-style: normal;
-    // font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    &:hover {
-      color: black;
-    }
-  }
+  // .subject {
+  //   color: #979797;
+  //   margin: 5px 15px;
+  //   // font-family: Montserrat;
+  //   // font-style: normal;
+  //   // font-weight: 500;
+  //   font-size: 16px;
+  //   line-height: 20px;
+  //   &:hover {
+  //     color: black;
+  //   }
+  // }
 
   .arrowdowm {
     border: solid black;
@@ -56,6 +56,7 @@ export const CbtWaec = styled.div`
   }
 `;
 export const CbtWaecCom = styled.div`
+  margin: 12px;
   width: 100%;
   color: #5b64b1;
   height: max-content;
@@ -93,10 +94,10 @@ export const CbtWaecCom = styled.div`
   }
 `;
 
-export const Button = styled.div`
-  background: #f2f2f2;
-  border-radius: 7px;
-  margin: 12px;
-  color: #979797;
-  display: block;
-`;
+// export const Button = styled.div`
+//   background: #f2f2f2;
+//   border-radius: 7px;
+//   margin: 12px;
+//   color: #979797;
+//   display: block;
+// `;
