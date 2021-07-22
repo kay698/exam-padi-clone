@@ -46,20 +46,14 @@ export const StylQA = styled.div`
 
 
 const QandA = ({item}) => {
-  const [modeContext,setModeContext] = useContext(ModeContext)
+  const [modeContext] = useContext(ModeContext)
     const { Title } = Typography
   const [selectedAnswer, setSelectedAnswer] = useState({});
   const [viewAnswer, setViewAnswer] = useState(null)
-  const [toggleAns, settoggleAns] = useState(false)
 
 const handleViewAnswer = () => {
     const val = item.answers.filter((el) => el.status)
     setViewAnswer(val[0].answer)
-}
-
-const toggleTrueFalse = (answer) => { 
-    setSelectedAnswer(answer)
-    settoggleAns(!toggleAns)
 }
 
     return ( 
@@ -78,7 +72,7 @@ const toggleTrueFalse = (answer) => {
         {modeContext === "practice" &&( viewAnswer ? 
         <>
             <div>
-                <hr className="hrline" />
+                <hr className="hrline" /> 
             </div>
             <p>Correct answers</p> 
             <p style={{marginLeft: "20px"}}>{viewAnswer}</p>

@@ -29,7 +29,6 @@ import Receipts from "./routes/Dashboard/Profile/SubPages/receipts";
 import { SubjectProvider } from "./context/SubjectContext";
 import { ModeProvider } from "./context/Mode";
 import "antd/dist/antd.css";
-// import { CbtWJContext } from "./context/contextWJ";
 
 function App() {
   return (
