@@ -1,0 +1,10 @@
+{
+    "prettier.eslintIntegration": true,
+    "prettier.tslintIntegration": true,
+    "prettier.stylelintIntegration": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.useTabs": true,
+    "cSpell.words": [
+        "Qand"
+    ]
+}
