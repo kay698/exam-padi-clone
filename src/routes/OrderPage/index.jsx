@@ -15,7 +15,7 @@ const OrderSummary = () => {
     setPaymentMethod(value);
   };
 
-  return (
+  return (  
     <OrderStyles>
       <div className="floatingLogo">
         <img src={Logo} alt="" />
