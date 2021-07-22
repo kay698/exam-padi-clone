@@ -18,8 +18,8 @@ import Downloads from "./routes/Dashboard/LibraryPage/SubPages/downloadsPage";
 import Achievements from "./routes/Dashboard/ReportPage/SubPages/acheivements";
 import Topic from "./routes/Dashboard/TopicPage";
 import TestScores from "./routes/Dashboard/ReportPage/SubPages/testScores";
-import WAEC from "./routes/Dashboard/CBTPage/waec";
-import JAMB from "./routes/Dashboard/CBTPage/jamb";
+import WAEC from "./routes/Dashboard/CBTPage/Waec/waec";
+import JAMB from "./routes/Dashboard/CBTPage/Jamb/jamb";
 import NECO from "./routes/Dashboard/CBTPage/NecoSat/neco";
 import SAT from "./routes/Dashboard/CBTPage/NecoSat/sat";
 import Profile from "./routes/Dashboard/Profile";
@@ -28,10 +28,12 @@ import ChangePassword from "./routes/Dashboard/Profile/SubPages/changePassword";
 import Receipts from "./routes/Dashboard/Profile/SubPages/receipts";
 import { SubjectProvider } from "./context/SubjectContext";
 import "antd/dist/antd.css";
+import { CbtWJContext } from "./context/contextWJ";
 
 function App() {
   return (
     <SubjectProvider>
+      <CbtWJContext>
       <div>
         <BrowserRouter>
           <Switch>
@@ -70,6 +72,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
+      </CbtWJContext>
     </SubjectProvider>
   );
 }
