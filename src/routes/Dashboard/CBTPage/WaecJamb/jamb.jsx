@@ -1,13 +1,11 @@
 import CbtLayout from "../../../../components/CBTlayout";
-import { CbtPageStyles } from "../styles";
+import { CbtPageStyles } from "./styles";
 import { FlexibleDiv } from "../../../../components/Box/styles";
-import { Typography } from "antd";
-import { CbtWaecCom } from "../Waec/styles";
+import { CbtWaecCom } from "../WaecJamb/styles";
 import JambItems from "./JambItems";
 
 
 const JAMB = () => {
-  // const { Title } = Typography;
   return (
     <CbtLayout>
       <CbtPageStyles>

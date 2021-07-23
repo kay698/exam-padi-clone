@@ -442,7 +442,7 @@ export const WaecJambData = [
     },
     {
       subject: "English",
-      examYear: "1999",
+      examYear: "2019",
       data: [
         {
           question: "1. The Number of Electron in an Element is the same as..",
@@ -788,7 +788,7 @@ export const WaecJambData = [
     },
     {
       subject: "Chemistry",
-      examYear: "1999",
+      examYear: "2019",
       data: [
         {
           question: "1. The Number of Electron in an Element is the same as..",

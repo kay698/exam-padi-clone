@@ -1,6 +1,5 @@
 import CbtLayout from "../../../../components/CBTlayout";
-import { CbtPageStyles } from "../styles";
-import { CbtWaecCom } from "../Waec/styles";
+import { CbtWaecCom, CbtPageStyles } from "./styles";
 import { FlexibleDiv } from "../../../../components/Box/styles";
 import WaecItems from "./WaecItems";
 
@@ -19,3 +18,4 @@ const WAEC = () => {
 };
 
 export default WAEC;
+

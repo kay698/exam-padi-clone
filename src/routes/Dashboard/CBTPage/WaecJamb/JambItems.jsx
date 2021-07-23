@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
-import { CbtWaec } from "../Waec/styles";
+import { CbtWaec } from "../WaecJamb/styles";
 import QandA from "./QandA";
 import { Select } from 'antd';
-
-// const { Option } = Select;
 
 
 const JambItems = () => {
@@ -21,7 +19,7 @@ const JambItems = () => {
         const filteredYearResults = WaecJambData.filter(
           (el) => year === el.examYear && selectedSubject === el.subject
         )
-        setData(filteredYearResults[0]); 
+        setData(filteredYearResults[0]);
       };
 
       const filterSubject = (subject) => {
@@ -48,13 +46,12 @@ const JambItems = () => {
       };
 
   return (
-    <>  
+    <>
       <div>
         <CbtWaec>
           <Select className="selectcss" bordered={false}
             defaultValue={selectedSubject}
             onChange={filterSubject}
-            // onChange={(e) => filterSubject(e.target.value)}
           > 
             {subjects.map((item, i) => (
               <Option key={i} value={item}>
@@ -66,7 +63,6 @@ const JambItems = () => {
           <Select className="selectcss" bordered={false}
             defaultValue={selectedYear}
             onChange={filterYear}
-            // onChange={(e) => filterYear(e.target.value)}
           >
             {WaecJambData.map((item, i) => (
               <Option key={i} value={item.examYear}>

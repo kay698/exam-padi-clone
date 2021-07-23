@@ -94,6 +94,47 @@ export const CbtWaecCom = styled.div`
   }
 `;
 
+
+export const StylQA = styled.div`
+        margin: 12px;
+    .question{
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;        
+        color: #5B64B1; 
+        // margin-top: 50px;
+        line-height: 23.75px;
+        font-weight: 200;
+    }
+    .answer {
+        margin: 5px 0;
+    }
+    .viewanswer {
+        color: #5B64B1;
+        background:#EFEFEF;
+        margin-top: none;
+        border-radius 7px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+    .ansbtn{
+        border-radius: 7px;
+        border: none;
+        color: #979797;
+        &:hover{
+            color: #979797;
+        }
+        .hrline {
+            border: 2px solid black;
+            margin-top: 15px;
+        }
+    }
+`
+
 // export const Button = styled.div`
 //   background: #f2f2f2;
 //   border-radius: 7px;
@@ -101,3 +142,13 @@ export const CbtWaecCom = styled.div`
 //   color: #979797;
 //   display: block;
 // `;
+
+
+
+// global for jamb and waec
+export const CbtPageStyles = styled.div`
+  width: 100%;
+  background: #FAFAFE;
+  // height: 100vh;
+  border-radius: 20px;
+`;
