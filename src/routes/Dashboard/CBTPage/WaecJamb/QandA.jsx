@@ -27,14 +27,16 @@ const handleViewAnswer = () => {
             <Button className="ansbtn" style={{backgroundColor: answer.answer === selectedAnswer.answer && '#979797', color: answer.answer === selectedAnswer.answer && '#fff' }}>{answer?.answer}</Button>
          </FlexibleDiv>
         ))}
-        <FlexibleDiv justifyContent="flex-start" style={{padding: "40px 20px 0 20px", color: "#27AE60"}}>
-        {modeContext === "practice" &&( viewAnswer ? 
+        <FlexibleDiv justifyContent="flex-start" style={{padding: "40px 20px 0 0px", color: "#27AE60"}}>
+        {modeContext === "practice" &&( viewAnswer ?
         <>
-            <div>
-                <hr className="hrline" /> 
+            <>
+                <hr className="hrline" />
+            </>
+            <div className="correctans">
+                <p className="correct">Correct answers</p> 
+                <p className="correct" style={{marginLeft: "10px"}}>{viewAnswer}</p>
             </div>
-            <p>Correct answers</p> 
-            <p style={{marginLeft: "20px"}}>{viewAnswer}</p>
         </>
         : null )}
         </FlexibleDiv>
