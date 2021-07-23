@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "../Waec/styles";
 import QandA from "./QandA";
+import { Select } from 'antd';
+
+// const { Option } = Select;
 
 
 const JambItems = () => {
+  const {Option} = Select
+
     const subjects = [...new Set(WaecJambData.map((item) => item.subject))];
-    const [selectedSubject, setSelectedSubject] = useState(WaecJambData.subject);
-    const [selectedYear, setSelectedYear] = useState({});
-    const [selectedAnswer, setSelectedAnswer] = useState({});
+    const [selectedSubject, setSelectedSubject] = useState("English");
+    const [selectedYear, setSelectedYear] = useState("2021");
     const [data, setData] = useState();
 
 
@@ -42,45 +46,34 @@ const JambItems = () => {
         );
         setData(filteredSubjectResults[0]);
       };
-    
-    //   const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //   };
 
   return (
-    <div>
-        <div>
+    <>  
       <div>
         <CbtWaec>
-          <select className="selectcss"
-            value={selectedSubject}
-            onChange={(e) => filterSubject(e.target.value)}
-          >
-              <span className="arrowdown"></span>
-            {/* <option value="default" disabled>
-            Select Subject
-        </option> */}
-            {subjects.map((item) => (
-              <option key={item} value={item}>
+          <Select className="selectcss" bordered={false}
+            defaultValue={selectedSubject}
+            onChange={filterSubject}
+            // onChange={(e) => filterSubject(e.target.value)}
+          > 
+            {subjects.map((item, i) => (
+              <Option key={i} value={item}>
                 {item}
-              </option>
+              </Option>
             ))}
-          </select>
+          </Select>
 
-          <select className="selectcss"
-            value={selectedYear}
-            // onChange={filterYear}
-            onChange={(e) => filterYear(e.target.value)}
+          <Select className="selectcss" bordered={false}
+            defaultValue={selectedYear}
+            onChange={filterYear}
+            // onChange={(e) => filterYear(e.target.value)}
           >
-            {/* <option value="default" disabled>
-            Select Year
-        </option> */}
-            {WaecJambData.map((item) => (
-              <option key={item} value={item.examYear}>
+            {WaecJambData.map((item, i) => (
+              <Option key={i} value={item.examYear}>
                 {item.examYear}
-              </option>
+              </Option>
             ))}
-          </select>
+          </Select>
         </CbtWaec>
 
         <div>
@@ -90,8 +83,7 @@ const JambItems = () => {
             ))}
         </div>
       </div>
-     </div>
-    </div>
+    </>
   );
 };
 

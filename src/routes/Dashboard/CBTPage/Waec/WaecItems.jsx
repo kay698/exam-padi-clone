@@ -2,12 +2,20 @@ import { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "./styles";
 import QandA from "../Jamb/QandA";
+import { Select, Pagination } from 'antd';
 
-const WaecItems = () => {
+
+const   WaecItems = () => {
   const subjects = [...new Set(WaecJambData.map((item) => item.subject))];
-  const [selectedSubject, setSelectedSubject] = useState(WaecJambData.subject);
-  const [selectedYear, setSelectedYear] = useState({});
+  const [selectedSubject, setSelectedSubject] = useState("English");
+  const [selectedYear, setSelectedYear] = useState("2021");
   const [data, setData] = useState();
+  const { Option } = Select
+
+
+  const [page, setpage] = useState(1)
+  const [pageSize, setpageSize] = useState(10)
+
 
   const filterYear = (year) => {
     setSelectedYear(year);
@@ -43,30 +51,31 @@ const WaecItems = () => {
 
   return (
     <div>
-      <div>
         <CbtWaec>
-          <select className="selectcss"
-            value={selectedSubject}
-            onChange={(e) => filterSubject(e.target.value)}
+          <>
+          <Select className="selectcss" bordered={false}
+            defaultValue={selectedSubject}
+            onChange={filterSubject}
+            // onChange={(e) => filterSubject(e.target.value)}
           >
-              <span className="arrowdown"></span>
-
-            {subjects.map((item) => (
-              <option key={item} value={item}>
+            {subjects.map((item, i) => (
+              <Option key={i} value={item}>
                 {item}
-              </option>
+              </Option>
             ))}
-          </select>
+          </Select>
 
-          <select className="selectcss"
-            value={selectedYear}
-            onChange={(e) => filterYear(e.target.value)}>
-            {WaecJambData.map((item) => (
-              <option key={item} value={item.examYear}>
+          <Select className="selectcss" bordered={false}
+            defaultValue={selectedYear}
+            onChange={filterYear}>
+            {/* onChange={(e) => filterYear(e.target.value)}> */}
+            {WaecJambData.map((item, i) => (
+              <Option key={i} value={item.examYear}>
                 {item.examYear}
-              </option>
+              </Option>
             ))}
-          </select>
+          </Select>
+          </>
         </CbtWaec>
 
         <div>
@@ -75,7 +84,13 @@ const WaecItems = () => {
               <QandA key={index} item={el} />
             ))}
         </div>
-      </div>
+        <Pagination style={{textAlign:'end'}}
+          dataSource={WaecJambData}
+          columns={WaecJambData}
+         Pagination={{
+          current: page,
+          pageSize: pageSize,
+        }} />
     </div>
   );
 };

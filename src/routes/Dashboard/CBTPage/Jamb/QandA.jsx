@@ -63,8 +63,8 @@ const handleViewAnswer = () => {
         <FlexibleDiv justifyContent="flex-end">
            {modeContext === 'practice' ? <Button onClick={() => handleViewAnswer()} className="viewanswer">View answer</Button> : <div />}
         </FlexibleDiv>
-        {item.answers.map((answer) => (
-         <FlexibleDiv className="answer" onClick={() => setSelectedAnswer(answer)} justifyContent="flex-start">
+        {item.answers.map((answer, i) => (
+         <FlexibleDiv key={i} className="answer" onClick={() => setSelectedAnswer(answer)} justifyContent="flex-start">
             <Button className="ansbtn" style={{backgroundColor: answer.answer === selectedAnswer.answer && '#979797', color: answer.answer === selectedAnswer.answer && '#fff' }}>{answer?.answer}</Button>
          </FlexibleDiv>
         ))}

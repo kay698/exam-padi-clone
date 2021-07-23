@@ -1,7 +1,7 @@
 // each year should have it's own export
 export const WaecJambData = [
     {
-      subject: "Physics",
+      subject: "English",
       examYear: "2021",
       data: [
         {
@@ -221,7 +221,7 @@ export const WaecJambData = [
       ]
     },
     {
-      subject: "Physics",
+      subject: "English",
       examYear: "2020",
       data: [
         {
@@ -441,7 +441,7 @@ export const WaecJambData = [
       ]
     },
     {
-      subject: "Physics",
+      subject: "English",
       examYear: "1999",
       data: [
         {
