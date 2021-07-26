@@ -6,5 +6,6 @@
     "prettier.useTabs": true,
     "cSpell.words": [
         "Qand"
-    ]
+    ],
+    "editor.tabSize": 1
 }
