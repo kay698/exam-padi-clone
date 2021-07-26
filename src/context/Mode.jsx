@@ -1,6 +1,4 @@
-import { createContext, useState, useEffect } from "react";
-// import { Buttons } from "../utils/dataHelpers/Button";
-// import { Neco } from "../utils/dataHelpers/NecoSat";
+import { createContext, useState} from "react";
 
 export const ModeContext = createContext();
 export const ModeProvider = ({children}) =>{

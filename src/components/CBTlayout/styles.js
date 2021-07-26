@@ -65,7 +65,7 @@ export const CbtLayoutStyles = styled.div`
 
     }
 
-.ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+.active {
     background: #FDE9D2;
     color: #5B64B1;
 }

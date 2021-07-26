@@ -1,19 +1,16 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import CbtLayout from "../../../../components/CBTlayout";
 import { NecoSatPageStyles } from "./styles";
 import { FlexibleDiv } from "../../../../components/Box/styles";
 import { SAT } from "../../../../utils/dataHelpers/NecoSat";
-import { Typography, Button, Select } from "antd";
-import {ModeContext} from "../../../../context/Mode"
+import { Select } from "antd";
 import QandA from "../../../../components/QandA";
-// import DashboardLayout from "../../../../components/Layout";
+
 
 const Sat = () => {
   const {Option} = Select
-  const {Title} = Typography;
   const subjects = [...new Set(SAT.map((item) => item.subject))];
   const [selectedSubject, setSelectedSubject] = useState("Physics");
-  const [selectedAnswer, setSelectedAnswer] = useState({});
 
   const [selectedYear, setSelectedYear] = useState("2021");
   const [data, setData] = useState();

@@ -4,7 +4,7 @@ import { FlexibleDiv } from "../Box/styles";
 import PagesHeader from "../PagesHeader";
 import { CbtNavListItems } from "../../utils/dataHelpers/cbtNavItems";
 import { Link } from "react-router-dom";
-import {Buttons} from "../../utils/dataHelpers/Button";
+import {Buttons} from "../ModeButtons/Button";
 // import { Buttons } from "../../utils/dataHelpers/cbtNavItems";
 
 const CbtLayout = ({ children }) => {
