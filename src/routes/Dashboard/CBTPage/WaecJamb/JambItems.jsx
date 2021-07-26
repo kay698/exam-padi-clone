@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "../WaecJamb/styles";
 import QandA from "./QandA";
-import { Select } from 'antd';
+import { Select, List, Pagination } from 'antd';
 
 
 const JambItems = () => {
@@ -78,6 +78,7 @@ const JambItems = () => {
                 <QandA key={index} item={el} />
             ))}
         </div>
+        <Pagination defaultCurrent={1} total={20} style={{textAlign:'end', marginLeft:'20px'}} />
       </div>
     </>
   );

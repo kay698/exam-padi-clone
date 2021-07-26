@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "./styles";
 import QandA from "./QandA";
-import { Select, List } from 'antd';
+import { Select, List, Pagination } from 'antd';
+import ModalResult from "./ModalResult";
 
 
 const WaecItems = () => {
@@ -11,6 +12,13 @@ const WaecItems = () => {
   const [selectedYear, setSelectedYear] = useState("2021");
   const [data, setData] = useState();
   const { Option } = Select
+
+
+  // For pagination logic implimentation
+  const [posts, setPosts] = useState(WaecJambData);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setcurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
 
   const filterYear = (year) => {
     setSelectedYear(year);
@@ -77,6 +85,10 @@ const WaecItems = () => {
               <QandA key={index} item={el} />
             ))}
         </div>
+        <div style={{marginBottom:"10px", marginLeft:'20px', textAlign:'end'}}>
+          <ModalResult />
+        </div>
+        <Pagination responsive={true} showQuickJumper={true} defaultPageSize={5} pageSize={postsPerPage} defaultCurrent={1} style={{textAlign:'end', marginLeft:'20px'}} />
     </div>
   );
 };

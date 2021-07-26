@@ -63,11 +63,11 @@ export const CbtWaecCom = styled.div`
 	font-size: 14px;
 	line-height: 20.75px;
 	font-family: Montserrat;
-	//   font-style: italic;
 	.body {
 		//   margin-left: 30px;
 		.ansbtn {
 			background: #f2f2f2;
+			/* background-color: red; */
 			border-radius: 7px;
 			margin: 13px;
 			color: #979797;
@@ -119,28 +119,39 @@ export const StylQA = styled.div`
 		line-height: 12px;
 		letter-spacing: 0.02em;
 		text-transform: uppercase;
-    @media (max-width: 300px) {
-      font-size: 8px;
-    }
+		@media (max-width: 300px) {
+			font-size: 8px;
+		}
 	}
 	.ansbtn {
 		border-radius: 7px;
 		border: none;
 		color: #979797;
+		@media (max-width: 725px) {
+			/* flex-basis: 100%; */
+			width: max-content;
+		}
 		&:hover {
 			color: #979797;
 		}
 	}
 	.hrline {
-		border: .5px solid #F2F2F2;
+		border: 0.5px solid #f2f2f2;
 		margin-bottom: 15px;
-    width: 100%;
+		width: 100%;
 	}
 	.correctans {
 		display: flex;
 		justify-content: space-between;
 	}
-
+	.correctselec {
+		color: #27ae60;
+		margin-left: 10px;
+	}
+	.wrong {
+		color: #eb5757;
+		margin-left: 10px;
+	}
 	.correct {
 		@media (max-width: 268px) {
 			font-size: 12px;
