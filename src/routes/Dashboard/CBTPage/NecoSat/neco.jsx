@@ -8,11 +8,8 @@ import { ModeContext } from "../../../../context/Mode";
 import QandA from "../../../../components/QandA";
 import { Button, Modal } from "antd";
 import QandATest from "../../../../components/QandA/test";
-import 'antd/dist/antd.css';
-import {Paginate} from "../../../../components/QandA/pagination";
-
-
-
+import "antd/dist/antd.css";
+import { Paginate } from "../../../../components/QandA/pagination";
 
 const NECO = () => {
 	const [isModalVisible, setIsModalVisible] = useState(false);
@@ -39,16 +36,15 @@ const NECO = () => {
 
 	const showModal = () => {
 		setIsModalVisible(true);
-};
+	};
 
-const handleOk = () => {
+	const handleOk = () => {
 		setIsModalVisible(false);
-};
+	};
 
-const handleCancel = () => {
+	const handleCancel = () => {
 		setIsModalVisible(false);
-};
-
+	};
 
 	useEffect(() => {
 		console.log({ modeContext });
@@ -73,7 +69,7 @@ const handleCancel = () => {
 							defaultValue={selectedSubject}
 							onChange={filterSubject}
 							style={{ width: 120 }}
-							bordered ={false}>
+							bordered={false}>
 							<Option defaultValue="default" disabled>
 								Select Subject
 							</Option>
@@ -88,7 +84,7 @@ const handleCancel = () => {
 							defaultValue={selectedYear}
 							onChange={filterYear}
 							style={{ width: 120 }}
-							bordered ={false}
+							bordered={false}
 							className="selec">
 							<Option defaultValue="default" disabled>
 								Select Year
@@ -109,26 +105,48 @@ const handleCancel = () => {
 							data.data.map((el, index) => <QandA item={el} key={index} />)}
 						{modeContext === "test" &&
 							data &&
-							data.data.map((el, index) => <QandATest item={el} key={index} score={score} setScore={setScore}/>)}
+							data.data.map((el, index) => (
+								<QandATest
+									item={el}
+									key={index}
+									score={score}
+									setScore={setScore}
+								/>
+							))}
 					</FlexibleDiv>
 				</>
 
 				<FlexibleDiv justifyContent="center">
-					{modeContext === "test" && <Button className="buts" onClick={()=> showModal(true)}>Submit</Button>}
+					{modeContext === "test" && (
+						<Button className="buts" onClick={() => showModal(true)}>
+							Submit
+						</Button>
+					)}
 				</FlexibleDiv>
 
 				<>
-     {modeContext === "test" &&  <Modal  visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null} >
-					<p>Congratulations</p>
-					<p> Your test score is</p>
-							<p>{score}/{data.data.length}</p>
-		
+					{modeContext === "test" && (
+						<Modal
+							visible={isModalVisible}
+							onOk={handleOk}
+							onCancel={handleCancel}
+							footer={null} 	bodyStyle={{ fontSize: "30px"}}
+							style={{borderRadius: "15px"}}
+							centered>
+						
 							
-					</Modal>}
-    </>
-        
+								<h3 className="h1">Congratulations</h3>
+								<p className="para"> Your test score is</p>
+								<p className="para">
+									{score}/{data.data.length}
+								</p>
+						
+						</Modal>
+					)}
+				</>
+
 				<FlexibleDiv justifyContent="flex-end">
-					<Paginate/>
+					<Paginate />
 				</FlexibleDiv>
 			</NecoSatPageStyles>
 		</CbtLayout>
