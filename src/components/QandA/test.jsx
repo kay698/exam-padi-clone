@@ -2,11 +2,17 @@ import { Button, Typography } from "antd";
 import { useState } from "react";
 import { FlexibleDiv } from "../Box/styles";
 
-const QandATest = ({ item }) => {
+ 
+
+const QandATest = ({ item, score, setScore }) => {
 	const {Title} = Typography;
 	const [selectedAnswer, setSelectedAnswer] = useState({});
-	const [score, setScore] = useState(null);
-	const [disable,setDisable] = useState(false)
+
+// const handleScore = () =>{
+
+// }
+
+// let score = 0
 	 
 
 	return (
@@ -20,16 +26,17 @@ const QandATest = ({ item }) => {
 				<FlexibleDiv justifyContent="space-between" className="mode">
 				
 				</FlexibleDiv>
+				
 				{item.answers.map((answer, index) => (
 					<FlexibleDiv
 						justifyContent="flex-start">
 						
 							<Button
-							disabled={disable}
+						
 						onClick={() => {
-       setSelectedAnswer.status && setScore(score + 1)
+       answer?.status && setScore(score + 1)
        setSelectedAnswer(answer)
-							setDisable(true)
+							console.log(score)
       }}
 						
 								style={{

@@ -6,23 +6,20 @@ import { Neco } from "../../../../utils/dataHelpers/NecoSat";
 import { Select } from "antd";
 import { ModeContext } from "../../../../context/Mode";
 import QandA from "../../../../components/QandA";
-import { Pagination, Button } from "antd";
+import { Button, Modal } from "antd";
 import QandATest from "../../../../components/QandA/test";
-import OpenModal from "../../../../components/QandA/modal";
+import "antd/dist/antd.css";
+import { Paginate } from "../../../../components/QandA/pagination";
 
 const NECO = () => {
+	const [isModalVisible, setIsModalVisible] = useState(false);
 	const { Option } = Select;
 	const [modeContext] = useContext(ModeContext);
 	const subjects = [...new Set(Neco.map((item) => item.subject))];
 	const [selectedSubject, setSelectedSubject] = useState("Physics");
 	const [selectedYear, setSelectedYear] = useState("2021");
-	const [activePage, setActivePage] = useState(5);
-  const [modal, setModal] = useState(false);
 	const [data, setData] = useState();
-
-	const handleChange = (pageNumber) => {
-		setActivePage(pageNumber);
-	};
+	const [score, setScore] = useState(0);
 
 	const filterYear = (year) => {
 		setSelectedYear(year);
@@ -35,6 +32,18 @@ const NECO = () => {
 		setSelectedSubject(subject);
 		const filteredSubjectResults = Neco.filter((el) => subject === el.subject);
 		setData(filteredSubjectResults[0]);
+	};
+
+	const showModal = () => {
+		setIsModalVisible(true);
+	};
+
+	const handleOk = () => {
+		setIsModalVisible(false);
+	};
+
+	const handleCancel = () => {
+		setIsModalVisible(false);
 	};
 
 	useEffect(() => {
@@ -59,7 +68,8 @@ const NECO = () => {
 						<Select
 							defaultValue={selectedSubject}
 							onChange={filterSubject}
-							style={{ width: 120 }}>
+							style={{ width: 120 }}
+							bordered={false}>
 							<Option defaultValue="default" disabled>
 								Select Subject
 							</Option>
@@ -74,6 +84,7 @@ const NECO = () => {
 							defaultValue={selectedYear}
 							onChange={filterYear}
 							style={{ width: 120 }}
+							bordered={false}
 							className="selec">
 							<Option defaultValue="default" disabled>
 								Select Year
@@ -94,25 +105,48 @@ const NECO = () => {
 							data.data.map((el, index) => <QandA item={el} key={index} />)}
 						{modeContext === "test" &&
 							data &&
-							data.data.map((el, index) => <QandATest item={el} key={index} />)}
+							data.data.map((el, index) => (
+								<QandATest
+									item={el}
+									key={index}
+									score={score}
+									setScore={setScore}
+								/>
+							))}
 					</FlexibleDiv>
 				</>
 
 				<FlexibleDiv justifyContent="center">
-					{modeContext === "test" && <Button className="buts" onClick={()=> setModal(true)}>Submit</Button>}
+					{modeContext === "test" && (
+						<Button className="buts" onClick={() => showModal(true)}>
+							Submit
+						</Button>
+					)}
 				</FlexibleDiv>
-        <OpenModal isOpen={modal}
-        setIsClose={() => setModal(false)}
-        score={<h3 className="done"> Done! Thank You</h3>}
-        scores={
-          <p className="para">
-            {" "}
-             thank you. You’ll be notified when we launch
-            our app.
-          </p>
-        }/>
+
+				<>
+					{modeContext === "test" && (
+						<Modal
+							visible={isModalVisible}
+							onOk={handleOk}
+							onCancel={handleCancel}
+							footer={null} 	bodyStyle={{ fontSize: "30px"}}
+							style={{borderRadius: "15px"}}
+							centered>
+						
+							
+								<h3 className="h1">Congratulations</h3>
+								<p className="para"> Your test score is</p>
+								<p className="para">
+									{score}/{data.data.length}
+								</p>
+						
+						</Modal>
+					)}
+				</>
+
 				<FlexibleDiv justifyContent="flex-end">
-					<Pagination defaultValue={1} total={50} />
+					<Paginate />
 				</FlexibleDiv>
 			</NecoSatPageStyles>
 		</CbtLayout>
