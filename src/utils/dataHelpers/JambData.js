@@ -1,4 +1,3 @@
-// each year should have it's own export
 export const JambData = [
   {
     subject: "Physics",

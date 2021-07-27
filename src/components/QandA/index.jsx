@@ -11,13 +11,13 @@ const QandA = ({ item }) => {
 	const [disable, setDisable] = useState(false);
  const [correctAnswer, setCorrectAnswer] = useState(null)
 	const handleViewAnswer = () => {
-		const val = item.answers.filter((el) => el.status);
+		const val = item.answers.filter((elitem) => elitem.status);
 		setViewAnswer(val[0].answer);
 		setDisable(true)
 	};
 
  const handleCorrectAnswer = () =>{
-  const val = item.answers.filter((el) => el.status)
+  const val = item.answers.filter((elitem) => elitem.status)
   // setCorrectAnswer
  }
 
@@ -37,9 +37,9 @@ const QandA = ({ item }) => {
 						</Button>
 
 				</FlexibleDiv>
-				{item.answers.map((el, index) => (
+				{item.answers.map((elitem, index) => (
 					<FlexibleDiv
-						onClick={() => setSelectedAnswer(el)}
+						onClick={() => setSelectedAnswer(elitem)}
 						justifyContent="flex-start">
 						
 							<Button
@@ -47,15 +47,15 @@ const QandA = ({ item }) => {
 							disabled={disable}
 								style={{
 									backgroundColor:
-								selectedAnswer?.answer === el.answer &&	(selectedAnswer?.status) ? "green" : selectedAnswer?.answer === el.answer && !selectedAnswer?.status ? "red" : "#F2F2F2",
-									color:	selectedAnswer?.answer === el.answer ? "#fff" : "#979797",
+								selectedAnswer?.answer === elitem.answer &&	(selectedAnswer?.status) ? "green" : selectedAnswer?.answer === elitem.answer && !selectedAnswer?.status ? "red" : "#F2F2F2",
+									color:	selectedAnswer?.answer === elitem.answer ? "#fff" : "#979797",
 								}}>
-								{el?.answer}
+								{elitem?.answer}
 							</Button>
-       {selectedAnswer?.answer === el.answer &&	(selectedAnswer?.status) &&
+       {selectedAnswer?.answer === elitem.answer &&	(selectedAnswer?.status) &&
         <span className="correct">Correct answer</span>
        }
-       {selectedAnswer?.answer === el.answer &&	!selectedAnswer?.status &&
+       {selectedAnswer?.answer === elitem.answer &&	!selectedAnswer?.status &&
         <span className="wrong">Wrong answer</span>
        }
 					</FlexibleDiv>

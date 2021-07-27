@@ -1,7 +1,7 @@
 // each year should have it's own export
 export const WaecJambData = [
     {
-      subject: "Physics",
+      subject: "English",
       examYear: "2021",
       data: [
         {
@@ -221,7 +221,7 @@ export const WaecJambData = [
       ]
     },
     {
-      subject: "Physics",
+      subject: "English",
       examYear: "2020",
       data: [
         {
@@ -441,8 +441,8 @@ export const WaecJambData = [
       ]
     },
     {
-      subject: "Physics",
-      examYear: "1999",
+      subject: "English",
+      examYear: "2019",
       data: [
         {
           question: "1. The Number of Electron in an Element is the same as..",
@@ -788,7 +788,7 @@ export const WaecJambData = [
     },
     {
       subject: "Chemistry",
-      examYear: "1999",
+      examYear: "2019",
       data: [
         {
           question: "1. The Number of Electron in an Element is the same as..",
