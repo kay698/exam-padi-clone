@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "./styles";
 import QandA from "./QandA";
-import { Select, List, Pagination } from 'antd';
+import { Select, Pagination } from 'antd';
 import ModalResult from "./ModalResult";
 
 
