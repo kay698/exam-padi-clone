@@ -1,11 +1,9 @@
 import { Button, Typography } from "antd"
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { FlexibleDiv } from "../../../../components/Box/styles";
-import { ModeContext } from "../../../../context/Mode";
 import { StylQA } from "./styles";
 
 const QandAT = ({item, score, setScore}) => {
- const [modeContext] = useContext(ModeContext)
  const { Title } = Typography
  const [selectedAnswer, setSelectedAnswer] = useState({});
 
