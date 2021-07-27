@@ -4,7 +4,7 @@ import { FlexibleDiv } from "../../../../components/Box/styles";
 import { ModeContext } from "../../../../context/Mode";
 import { StylQA } from "./styles";
 
-const QandA = ({item}) => {
+const QandAPractice = ({item}) => {
   const [modeContext] = useContext(ModeContext)
     const { Title } = Typography
     const [selectedAnswer, setSelectedAnswer] = useState({});
@@ -56,7 +56,7 @@ const QandA = ({item}) => {
      </>
     )
 }
-export default QandA;
+export default QandAPractice;
 
 
 // codesandbox for pagination

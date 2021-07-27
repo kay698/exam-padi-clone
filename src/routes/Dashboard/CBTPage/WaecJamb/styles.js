@@ -124,6 +124,7 @@ export const StylQA = styled.div`
 		}
 	}
 	.ansbtn {
+		background-color: #F2F2F2;
 		border-radius: 7px;
 		border: none;
 		color: #979797;

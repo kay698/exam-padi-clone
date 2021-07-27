@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "./styles";
-import QandA from "./QandA";
+import QandAPractice from "./QandAPractice";
 import { Select, Pagination } from 'antd';
 import ModalResult from "./ModalResult";
+import { ModeContext } from "../../../../context/Mode";
+import QandAT from "./QandAT";
+
 
 
 const WaecItems = () => {
@@ -11,7 +14,11 @@ const WaecItems = () => {
   const [selectedSubject, setSelectedSubject] = useState("English");
   const [selectedYear, setSelectedYear] = useState("2021");
   const [data, setData] = useState();
+  const [score, setScore] = useState(0);
+
   const { Option } = Select
+
+  const [modeContext] = useContext(ModeContext);
 
 
   // For pagination logic implimentation
@@ -42,7 +49,8 @@ const WaecItems = () => {
 
   useEffect(() => {
     onIntialLoad();
-  }, []);
+  }, [modeContext]);
+
   const onIntialLoad = () => {
     setSelectedYear(WaecJambData[0].examYear);
     setSelectedSubject(subjects[0]);
@@ -78,12 +86,22 @@ const WaecItems = () => {
           </Select>
           </>
         </CbtWaec>
-
         <div>
-          {data &&
+          {modeContext === "practice" &&
+          data &&
             data.data.map((el, index) => (
-              <QandA key={index} item={el} />
+              <QandAPractice key={index} item={el} />
             ))}
+            {modeContext === "test" &&
+							data &&
+							data.data.map((el, index) => (
+								<QandAT
+									item={el}
+									key={index}
+									score={score}
+									setScore={setScore}
+								/>
+							))}
         </div>
         <div style={{marginBottom:"10px", marginLeft:'20px', textAlign:'end'}}>
           <ModalResult />
