@@ -57,3 +57,7 @@ const QandA = ({item}) => {
     )
 }
 export default QandA;
+
+
+// codesandbox for pagination
+// https://codepen.io/jakub_antolak/project/editor/DxjyKX

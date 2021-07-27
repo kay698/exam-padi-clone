@@ -15,9 +15,9 @@ const WaecItems = () => {
 
 
   // For pagination logic implimentation
-  const [posts, setPosts] = useState(WaecJambData);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setcurrentPage] = useState(1);
+  // const [posts, setPosts] = useState(WaecJambData);
+  // const [loading, setLoading] = useState(false);
+  // const [currentPage, setcurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
 
   const filterYear = (year) => {

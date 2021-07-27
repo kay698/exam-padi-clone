@@ -4,7 +4,7 @@ import { Modal, Button } from "antd";
 const ModalResult = () => {
 	const [visible, setVisible] = React.useState(false);
 	const [confirmLoading, setConfirmLoading] = React.useState(false);
-	const [modalText, setModalText] = React.useState("Total Results Score");
+	const [modalText, setModalText] = React.useState("Total Results Score: English: 50, Math: 10, Physics: 2, Chemistry: 60");
 
 	const showModal = () => {
 		setVisible(true);
@@ -29,8 +29,8 @@ const ModalResult = () => {
 			<Button style={{borderRadius:"7px", backgroundColor:'#27AE60', color:'#fff'}} onClick={showModal}>
 				Submit
 			</Button>
-			<Modal style={{height:'60%'}}
-				title="Title"
+			<Modal style={{height:'100vh'}}
+				title="Total Scores"
 				visible={visible}
 				onOk={handleOk}
 				confirmLoading={confirmLoading}
