@@ -74,36 +74,10 @@ export const NecoSatPageStyles = styled.div`
     color: green
   }
 
-  .modal {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-}
-
 .buts{
   width: 30%;
   min-width: 100px;
   margin-top: 20px;
-}
-
-.modals {
-  position: fixed;
-  height: auto;
-  width: 30%;
-  margin: 200px auto;
-  left: 15%;
-  right: 15%;
-  border-radius: 20px;
-  background: #ffffff;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  outline: none;
 }
 
 
