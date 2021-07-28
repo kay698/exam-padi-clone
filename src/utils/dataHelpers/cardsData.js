@@ -9,10 +9,6 @@ import Percentage from "../../assets/svgs/percentageIcon.svg";
 import WhiteClock from "../../assets/svgs/whiteClock.svg";
 import CompleteLessonBadge from "../../assets/pngs/orangeBadge.png";
 import CompleteSubjecBadge from "../../assets/pngs/purpleBadge.png";
-import SeaGreenScoreBadge from "../../assets/pngs/seaGreenBadge.png";
-
-import HoursBadge from "../../assets/pngs/navyBlueBadge.png";
-
 export const AchievementBadges = [
   {
     title: "Complete Lesson",

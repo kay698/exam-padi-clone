@@ -9,17 +9,13 @@ const QandA = ({ item }) => {
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [viewAnswer, setViewAnswer] = useState(null);
 	const [disable, setDisable] = useState(false);
- const [correctAnswer, setCorrectAnswer] = useState(null)
 	const handleViewAnswer = () => {
 		const val = item.answers.filter((el) => el.status);
 		setViewAnswer(val[0].answer);
 		setDisable(true)
 	};
 
- const handleCorrectAnswer = () =>{
-  const val = item.answers.filter((el) => el.status)
-  // setCorrectAnswer
- }
+ 
 
 	return (
 		
@@ -39,11 +35,11 @@ const QandA = ({ item }) => {
 				</FlexibleDiv>
 				{item.answers.map((el, index) => (
 					<FlexibleDiv
-						onClick={() => setSelectedAnswer(el)}
 						justifyContent="flex-start">
 						
 							<Button
-							onClick={() => setDisable(false)}
+							onClick={() => {setDisable(false)
+								setSelectedAnswer(el)} }
 							disabled={disable}
 								style={{
 									backgroundColor:

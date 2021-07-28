@@ -8,13 +8,6 @@ const QandATest = ({ item, score, setScore }) => {
 	const {Title} = Typography;
 	const [selectedAnswer, setSelectedAnswer] = useState({});
 
-// const handleScore = () =>{
-
-// }
-
-// let score = 0
-	 
-
 	return (
 		
 			<FlexibleDiv justifyContent="flex-start">
@@ -36,7 +29,6 @@ const QandATest = ({ item, score, setScore }) => {
 						onClick={() => {
        answer?.status && setScore(score + 1)
        setSelectedAnswer(answer)
-							console.log(score)
       }}
 						
 								style={{

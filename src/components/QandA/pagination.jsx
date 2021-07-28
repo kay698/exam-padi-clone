@@ -21,19 +21,19 @@ export const Paginate = (questions) => {
   );
 }
 
-export const Paginates = () => {
+// export const Paginates = () => {
 
- const [data, setData] = useState([])
+//  const [data, setData] = useState([])
 
- const getQuestions = async () => {
-   const response = await fetch (url);
-   const data = await response.json()
-   setData(Paginate(data))
- }
- console.log(getQuestions)
- useEffect(() => {
-  getQuestions()
- }, [])
- return {data}
-}
+//  const getQuestions = async () => {
+//    const response = await fetch (url);
+//    const data = await response.json()
+//    setData(Paginate(data))
+//  }
+//  console.log(getQuestions)
+//  useEffect(() => {
+//   getQuestions()
+//  }, [])
+//  return {data}
+// }
 

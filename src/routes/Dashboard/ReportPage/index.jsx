@@ -11,7 +11,7 @@ import {
   ReportsTableData,
   ReportsTableHead,
 } from "../../../utils/dataHelpers/tablesData";
-import { generatePercentage } from "../../../utils/functionLibraries";
+// import { generatePercentage } from "../../../utils/functionLibraries";
 import { Link } from "react-router-dom";
 import CustomTable from "../../../components/Table";
 import { OverFlowScrollBar } from "../../../components/OverflowScroll/styles";
