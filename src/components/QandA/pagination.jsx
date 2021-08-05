@@ -1,9 +1,7 @@
 
 import 'antd/dist/antd.css';
 import { Pagination } from 'antd';
-import { useState, useEffect } from 'react';
-import { Neco } from '../../utils/dataHelpers/NecoSat';
- const url = Neco
+
 export const Paginate = (questions) => {
 
  const itemsPerPage = 5
@@ -21,19 +19,4 @@ export const Paginate = (questions) => {
   );
 }
 
-// export const Paginates = () => {
-
-//  const [data, setData] = useState([])
-
-//  const getQuestions = async () => {
-//    const response = await fetch (url);
-//    const data = await response.json()
-//    setData(Paginate(data))
-//  }
-//  console.log(getQuestions)
-//  useEffect(() => {
-//   getQuestions()
-//  }, [])
-//  return {data}
-// }
 
