@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { WaecJambData } from "../../../../utils/dataHelpers/WaecJambData";
 import { CbtWaec } from "../WaecJamb/styles";
-import QandA from "./QandA";
+import QandA from "./QandAPractice";
 import { Select, Pagination } from 'antd';
+import ModalResult from "./ModalResult";
+import QandAT from "./QandAT";
+import { ModeContext } from "../../../../context/Mode";
+
 
 
 const JambItems = () => {
   const {Option} = Select
+  const [modeContext] = useContext(ModeContext);
 
     const subjects = [...new Set(WaecJambData.map((item) => item.subject))];
     const [selectedSubject, setSelectedSubject] = useState("English");
     const [selectedYear, setSelectedYear] = useState("2021");
     const [data, setData] = useState();
+    const [postsPerPage] = useState(5);
+    const [score, setScore] = useState(0);
+
 
 
     const filterYear = (year) => {
@@ -62,8 +70,7 @@ const JambItems = () => {
 
           <Select className="selectcss" bordered={false}
             defaultValue={selectedYear}
-            onChange={filterYear}
-          >
+            onChange={filterYear}>
             {WaecJambData.map((item, i) => (
               <Option key={i} value={item.examYear}>
                 {item.examYear}
@@ -73,12 +80,26 @@ const JambItems = () => {
         </CbtWaec>
 
         <div>
-          {data &&
+          {modeContext === "practice" &&
+          data &&
             data.data.map((el, index) => (
                 <QandA key={index} item={el} />
             ))}
+             {modeContext === "test" &&
+							data &&
+							data.data.map((el, index) => (
+								<QandAT
+									item={el}
+									key={index}
+									score={score}
+									setScore={setScore}
+								/>
+							))}
         </div>
-        <Pagination defaultCurrent={1} total={20} style={{textAlign:'end', marginLeft:'20px'}} />
+        <div style={{marginBottom:"10px", marginLeft:'20px', textAlign:'end'}}>
+          <ModalResult />
+        </div>
+        <Pagination responsive={true} showQuickJumper={true} defaultPageSize={5} pageSize={postsPerPage} defaultCurrent={1} style={{textAlign:'end', marginLeft:'20px'}} />
       </div>
     </>
   );

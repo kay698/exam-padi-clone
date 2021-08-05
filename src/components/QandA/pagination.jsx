@@ -16,7 +16,7 @@ export const Paginate = (questions) => {
 
  return ( 
   <>
-   <Pagination defaultCurrent={1} total={50}  onclick={newFollowers}/>
+   <Pagination defaultCurrent={1} total={50} onclick={newFollowers} />
   </>
   );
 }
