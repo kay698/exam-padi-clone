@@ -1,5 +1,4 @@
 
-import 'antd/dist/antd.css';
 import { Pagination } from 'antd';
 
 export const Paginate = (questions) => {

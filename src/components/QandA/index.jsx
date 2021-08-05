@@ -15,7 +15,6 @@ const QandA = ({ item }) => {
 		setDisable(true)
 	};
 
- 
 
 	return (
 		
